@@ -16,4 +16,7 @@
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route')
 
-Route.on('/').render('welcome')
+Route.get('/heroes', 'HeroController.index')
+Route.get('*', () => {
+    throw new NotFoundException('This url does not exist')
+})
