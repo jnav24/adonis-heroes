@@ -5,13 +5,16 @@ const Schema = use('Schema')
 
 class CreateHeroesSchema extends Schema {
     up () {
-        this.create('create_heroes', (table) => {
+        this.create('heroes', (table) => {
             table.increments()
             table.string('name')
             table.string('alias')
             table.string('gender')
             table.string('species')
             table.string('universe')
+            table.string('slug')
+            table.string('image')
+            table.text('description')
             table.timestamps()
         })
     }
