@@ -4,8 +4,6 @@ const Env = use('Env')
 
 class ApiResponse {
     getErrorObject(request, message, err, status) {
-        const { poweredBy } = this.getPoweredBy(request)
-
         let error = '';
 
         if (['development'].indexOf(Env.get('NODE_ENV')) > -1) {
@@ -16,7 +14,6 @@ class ApiResponse {
             message,
             error,
             status,
-            poweredBy,
         }
     }
 

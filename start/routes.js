@@ -15,6 +15,7 @@
 
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route')
+const NotFoundException = use('App/Exceptions/NotFoundException')
 
 Route.get('/heroes', 'HeroController.index')
 Route.get('*', () => {
