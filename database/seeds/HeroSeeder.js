@@ -16,6 +16,12 @@ const Database = use('Database')
 
 class HeroSeeder {
     async run () {
+        const users = await Database.table('heroes').count()
+
+        if (!!users[0] && !!users[0]['count(*)']) {
+            return true
+        }
+
         const heroes = await Database.table('heroes')
             .insert([
                 {
