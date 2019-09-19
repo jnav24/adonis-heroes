@@ -18,6 +18,7 @@ const Route = use('Route')
 const NotFoundException = use('App/Exceptions/NotFoundException')
 
 Route.get('/heroes', 'HeroController.index')
+Route.get('/hero/:id/:name', 'HeroController.show')
 Route.get('*', () => {
     throw new NotFoundException('This url does not exist')
 })
